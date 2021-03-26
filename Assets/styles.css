@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.banner {
+  background-color: grey;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  color: white;
+}
+
+.container {
+  padding: 0%;
+  margin: 0%;
+}
+
+li {
+  margin-left: 10px;
+  width: 400px;
+}
+
+.search {
+  margin-left: 10px;
+  margin-bottom: 5%;
+}
+
+.search-color {
+  color: white;
+}
+
+.search-b-color {
+  background-color: blue;
+  border-radius: 5px;
+}
+
+.search-b-color:hover {
+  background-color: lightblue;
+  border-width: 1px !important;
+  border-color: white;
+  border-style: solid;
+}
+
+.search-head {
+  margin-left: 10px;
+}
+
+.search-div {
+  background-color: lightgray;
+  padding-right: 5%;
+  float: left !important;
+}
+
+.test2 {
+}
+
+.city-info {
+  border-width: 1px !important;
+  border-color: grey !important;
+  border-style: solid;
+}
+
+.city-heading {
+  margin-bottom: 1%;
+  margin-left: 10px;
+}
+
+.tesing-border {
+  border-width: 1px !important;
+  border-color: grey !important;
+  border-style: solid;
+  border-radius: 25px;
+  margin-top: 1%;
+}
+
+.card-color-w {
+  background-color: #195dca;
+  color: white;
+}
+
+.five-day-f {
+  margin-top: 1%;
+}
+
+/* .blue-cast {
+  width: 60%;
+} */
