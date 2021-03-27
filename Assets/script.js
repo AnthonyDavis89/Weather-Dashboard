@@ -10,18 +10,18 @@ let currentDate = $(".currentDate");
 let weatherIcon = $(".weatherIcon");
 let searchHistory = $(".historyItems");
 
-// Main area
-// let cityTemp = $(".city-temp");
-// let cityHum = $(".city-hum");
-// let cityWind = $(".city-wind");
-// let cityUV = $(".city-UV");
 
 // 5-Day Forecast
 
 //
 searchBtn.on("click", function () {
   console.log("clicked button");
-  //   console.log(searchInput.val());
+  //   Local Storage 
+  var position = 0;
+  var inputStorage = searchInput.val();
+  localStorage.setItem(position, inputStorage);
+  position ++;
+  console.log("push my buttons pls"); 
 
   var city = searchInput.val();
   getWeather(city);
@@ -35,7 +35,6 @@ function getWeather(city) {
     url: queryUrl,
     method: "GET",
   }).then(function (response) {
-    console.log(response);
     var cityTemp = Math.round(response.main.temp);
     var cityHum = response.main.humidity;
     var cityWind = response.wind.speed;
@@ -45,44 +44,47 @@ function getWeather(city) {
     var iconURL = "http://openweathermap.org/img/wn/" + weatherIcon + "@2x" + ".png";
     
 
-   
+
+  let queryUrl2 = `https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&exclude={part}&APPid=${apiKey}`;
+  $.ajax({
+    url: queryUrl2,
+    method: "GET",
+  }).then(function (responseAll) {
+    console.log(responseAll);
+    var cityUiv = responseAll.current.uvi;
 
     $(".city-heading")
-      .html(
-        "<h1>" +
-          searchInput.val() +
-          " " +
-          "(" +
-          date +
-          ")" +
-          "</h1>"
-      )
-      .addClass("city-heading");
+    .html(
+      "<h1>" +
+        searchInput.val() +
+        " " +
+        "(" +
+        date +
+        ")" +
+        "</h1>"
+    )
+    .addClass("city-heading");
 
-    $(".city-temp").html("<p>Temperature: " + cityTemp +  "</p>");
-    $(".city-hum").html("<p>Humidity: " + cityHum +  "</p>");
-    $(".city-wind").html("<p>Wind Speed: " + cityWind +  "</p>");
-    $("img").attr("src", iconURL);
+  $(".city-temp").html("<p>Temperature: " + cityTemp +  "</p>");
+  $(".city-hum").html("<p>Humidity: " + cityHum +  "</p>");
+  $(".city-wind").html("<p>Wind Speed: " + cityWind +  "</p>");
+  $(".city-UV").html("<p>UV Index: " + cityUiv +  "</p>");
+  $("img").attr("src", iconURL);
+
+})
+
   });
+
 }
 
 
 //
 $(".city-heading").append(" " + date);
 
-
-// function getWeather(cityInput) {
-//     let queryUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputy}&APPID=${apiKey}&units=imperial`;
-//     $.ajax({
-//         url: queryUrl,
-//         method: "GET"
-//     })
-//     .then(function(weatherData) {
-//         let cityObj = {
-//             cityName: weatherData.name,
-//             cityTemp: weatherData.main.temp,
-//             cityHumidity: weatherData.main.humidity,
-//             cityWindSpeed: weatherData.wind.speed,
-//             cityUVIndex: weatherData.coord,
-//             cityWeatherIconName: weatherData.weather[0].icon
-//         }}}
+// function getSchedule() {
+//   var positionStorage = $('.row').toArray();
+//   $.each(positionStorage, function(){
+//       var time =$(this).attr('id')
+//       $('.#id', this).prepend(localStorage.getItem(time))
+//   })
+// }
