@@ -85,13 +85,14 @@ console.log(iconURL5day3)
       $(".card-temp2").html("<p>Temperature: " + temp2Hold +  "</p>");
       $(".card-temp3").html("<p>Temperature: " + temp3Hold +  "</p>");
       $(".card-temp4").html("<p>Temperature: " + temp4Hold +  "</p>");
-    
 
-      $(".card-Hum0").append(responseAll.daily[0].humidity);
-      $(".card-Hum1").append(responseAll.daily[1].humidity);
-      $(".card-Hum2").append(responseAll.daily[2].humidity);
-      $(".card-Hum3").append(responseAll.daily[3].humidity);
-      $(".card-Hum4").append(responseAll.daily[4].humidity);
+
+      $(".card-Hum0").html("<p>Humidity: " + responseAll.daily[0].humidity +  "</p>");
+      $(".card-Hum1").html("<p>Humidity: " + responseAll.daily[1].humidity +  "</p>");
+      $(".card-Hum2").html("<p>Humidity: " + responseAll.daily[2].humidity +  "</p>");
+      $(".card-Hum3").html("<p>Humidity: " + responseAll.daily[3].humidity +  "</p>");
+      $(".card-Hum4").html("<p>Humidity: " + responseAll.daily[4].humidity +  "</p>");
+  
 
       $("card-image0").attr("src", iconURL5day0);
       console.log(iconURL5day0)
