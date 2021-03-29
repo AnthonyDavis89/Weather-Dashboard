@@ -100,11 +100,11 @@ console.log(iconURL5day3)
       $("card-image3").attr("src", iconURL5day3);
       $("card-image4").attr("src", iconURL5day4);
 
-      var date1 = moment().add(1, 'days').calendar(); 
-      var date2 = moment().add(2, 'days').calendar(); 
-      var date3 = moment().add(3, 'days').calendar(); 
-      var date4 = moment().add(4, 'days').calendar(); 
-      var date5 = moment().add(5, 'days').calendar(); 
+      var date1 = moment().add(1, 'days').format('LL'); 
+      var date2 = moment().add(2, 'days').format('LL'); 
+      var date3 = moment().add(3, 'days').format('LL'); 
+      var date4 = moment().add(4, 'days').format('LL'); 
+      var date5 = moment().add(5, 'days').format('LL'); 
 
       $(".date1").html("<h5>" + date1+  "</h5>");
       $(".date2").html("<h5>" + date2+  "</h5>");
