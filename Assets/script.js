@@ -94,12 +94,12 @@ console.log(iconURL5day3)
       $(".card-Hum4").html("<p>Humidity: " + responseAll.daily[4].humidity +  "</p>");
   
 
-      $("card-image0").attr("src", iconURL5day0);
+      $(".card-image0").attr("src", iconURL5day0);
       console.log(iconURL5day0)
-      $("card-image1").attr("src", iconURL5day1);
-      $("card-image2").attr("src", iconURL5day2);
-      $("card-image3").attr("src", iconURL5day3);
-      $("card-image4").attr("src", iconURL5day4);
+      $(".card-image1").attr("src", iconURL5day1);
+      $(".card-image2").attr("src", iconURL5day2);
+      $(".card-image3").attr("src", iconURL5day3);
+      $(".card-image4").attr("src", iconURL5day4);
 
       var date1 = moment().add(1, 'days').format('LL'); 
       var date2 = moment().add(2, 'days').format('LL'); 
@@ -130,7 +130,7 @@ console.log(iconURL5day3)
   $(".city-hum").html("<p>Humidity: " + cityHum +  "</p>");
   $(".city-wind").html("<p>Wind Speed: " + cityWind +  "</p>");
   $(".city-UV").html("<p>UV Index: " + cityUiv +  "</p>");
-  $("img").attr("src", iconURL);
+  $(".pic1").attr("src", iconURL);
 
 })
 
