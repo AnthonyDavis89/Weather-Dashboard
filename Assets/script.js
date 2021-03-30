@@ -4,6 +4,8 @@ var searchInput = $(".searchInput");
 let historyItem = $(".history-item");
 var date = moment().format("l")
 var cityHistoryArray = [];
+var localKey = 0;
+
 
 // Left column
 let cityName = $(".city-heading");
@@ -12,20 +14,17 @@ let weatherIcon = $(".weatherIcon");
 let searchHistory = $(".historyItems");
 
 
-// 5-Day Forecast
+
+
 
 //
 searchBtn.on("click", function () {
   console.log("clicked button");
-  // if(cityHistoryArray == null) {
-  //   setStorage()  
-  // } else {
-
-  // }
-  setStorage(); 
-  //   Local Storage 
 
   var city = searchInput.val();
+  storeItem(city) 
+  getStorageItem();
+  
   getWeather(city);
 });
 
@@ -142,28 +141,21 @@ console.log(iconURL5day3)
 //
 $(".city-heading").append(" " + date);
 
-function setStorage() {
-  localStorage.setItem("localCityHistory", JSON.stringify(searchInput.val()));
-  onload();
+function storeItem(city) {
+  localStorage.setItem(localKey, city);
+  localKey++;
 }
 
-function onload() {
-//  cityHistoryArray.html("");
-if(localStorage.getItem("localCityHistory")) {
-  cityHistoryArray = JSON.parse(localStorage.getItem("localCityHistory"));
+function getStorageItem() {
 
-  for (let index = 0; index < cityHistoryArray.length; index++) {
-    // $("#[index]").append(cityHistoryArray[index])
-    
-  }
+for (let index = 0; index < localStorage.length; index++) {
+  var x = localStorage.getItem(index);
+
+  $("#" + index).html("<p>" + x + "</p>");
+}
+  
 }
 
-}
 
-// function getSchedule() {
-//   var positionStorage = $('.row').toArray();
-//   $.each(positionStorage, function(){
-//       var time =$(this).attr('id')
-//       $('.#id', this).prepend(localStorage.getItem(time))
-//   })
-// }
+
+
