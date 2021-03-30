@@ -44,4 +44,4 @@ THEN I am again presented with current and future conditions for that city
 
 Final result of webpage:
 
-![Final result of webpage](.Assets/Images/5dayforecast.png)
+![Final result of webpage](./Assets/Images/5dayforecast.png)
